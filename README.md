@@ -1,15 +1,24 @@
 # fliptest
-Installation
+### Setup
+1. Install Homebrew on Mac
+  ```
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
 
-pip install robotframework
-pip install robotframework-seleniumlibrary
-pip install robotframework-requests
-pip install robotframework-jsonlibrary
+2. install python3 and pip3
+ - brew install python3
+ - brew install pip3
 
-Instructions
+2. install robot framework
+ - pip3 install robotframework
+ - pip3 install robotframework-seleniumlibrary
+ - pip3 install robotframework-requests
+ - pip3 install robotframework-jsonlibrary
 
-This is answer for Chapter 4
+3. install chromedriver
+ - for mac
+   please download https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-macos.tar.gz 
 
-Run Code
-
-robot -d report .\filename.robot
+### Running Features Test
+ - robot -d report .\filename.robot
+   ex : robot -d "report" ./chapter4_guest_uitest.robot

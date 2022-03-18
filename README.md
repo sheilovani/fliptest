@@ -15,7 +15,7 @@
  - pip3 install robotframework-requests
  - pip3 install robotframework-jsonlibrary
 
-3. install chromedriver
+3. install geckodriver
  - for mac
    please download https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-macos.tar.gz 
 

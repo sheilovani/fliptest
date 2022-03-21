@@ -78,8 +78,7 @@ See Order Summary Correctly
 *** Test Cases ***
 As a Guest, I want to Checkout a Cart and Shows Correct Information
     Given Open Vercel website
-    When Guess Choose Apparel Category
-    And Click Black Beanie Hat
+    When Click Black Beanie Hat
     And Add Item to the Cart
     And See My Cart Information Correctly
     And Click Proceed to Checkout Button

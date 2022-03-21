@@ -32,8 +32,8 @@ ${totalText}                    //*[text()='Total']
 ${totalMyCartValue}             //div[contains(@class,'mb-2')]//span[text()="$80.00"]
 ${totalMyCheckoutValue}         //div[@data-test="cart-total"]//span[@class="cart-priceItem-value"]
 ${closeButton}                  //*[@class="ml-2 text-accent-7 text-sm "]
-${searchField}                  (//*[@class="Searchbar_input__NfaB1"])[1)]
-${searchIcon}                   (//*[@class="Searchbar_icon__fajpH"])[1)]
+${searchField}                  (//*[@class="Searchbar_input__NfaB1"])[1]
+${searchIcon}                   (//*[@class="Searchbar_icon__fajpH"])[1]
 ${firstProduct}                 //*[@href="/product/next-js-enamel-mug"]
 ${continueButton}               checkout-shipping-continue
 ${placeOrderButton}             checkout-payment-continue
@@ -72,9 +72,8 @@ User Choose Lightweight Jacket
     Click Element                           ${LightweightJacket} 
 
 Add to Cart the Item
-    Scroll Page To Location
-    [Arguments]     ${x_location}    ${y_location}
-    Execute JavaScript                      window.scrollTo(${x_location},${y_location})
+    Sleep                                    2
+    Execute JavaScript                      window.scrollTo(0, 650)
     Click Element                           ${addToCartButton} 
 
 See My Cart Page
@@ -87,15 +86,17 @@ Add the Quantity Become 2 Pieces
     Click Element                           ${addQuantityButton}
 
 Close My Cart page
+    Sleep                                   2
     Wait Until Page Contains Element        ${closeButton}
     Click Element                           ${closeButton}
 
 Search For Joggers
+    Sleep                                   2
     Wait Until Page Contains Element        ${searchField}
     Click Element                           ${searchField}
     Input Text                              ${searchField}                    joggers
     Sleep                                   2
-    Click Element                           ${searchIcon}
+    Press Keys                              ${searchField}                    ENTER
 
 Choose Any Product
     Sleep                                   2
@@ -161,7 +162,7 @@ As a Login User, I Want to Login Successfully
 
 As a Login User, I Want buy 2 Lightweight Jacket
     Given User Choose Lightweight Jacket
-    And Add to Cart the Item            1201         749
+    And Add to Cart the Item
     And See My Cart Page
     And Add the Quantity Become 2 Pieces
     Then Close My Cart page
@@ -172,7 +173,7 @@ As a Login User, I Want buy 1 Joggers
     Then Click Proceed to Checkout Button
 
 As a Login User, I Want to Process My Payment
-    Given See My Order Summary Correctly
+    Given See Order Summary Correctly
     When Click Continue Button on Shipping Section
     And Input My Credit Card Information
     And Click Place Order Button
